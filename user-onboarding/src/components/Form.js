@@ -29,9 +29,11 @@ return (
          {/* BUTTON HERE */}
         <button disabled={disabled}>submit</button>
 
-        {/* 🔥 RENDER THE VALIDATION ERRORS HERE - DO LATER */}
+        {/* 🤖 RENDER THE VALIDATION ERRORS HERE */}
         <div className='errors'>
- 
+            <div>{errors.firstName}</div>
+            <div>{errors.lastName}</div>
+            <div>{errors.password}</div>
         </div>
       </div>
 
