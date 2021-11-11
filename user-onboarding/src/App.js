@@ -14,10 +14,12 @@ const initialFormValues = {
   ///// TEXT INPUTS /////
   firstName: '',
   lastName: '',
+  email: '',
   ///// PASSWORD /////
   password: '',
   ///// CHECKBOXES /////
-  checked: false,
+  checked: false
+
 }
 
 
@@ -26,6 +28,14 @@ const initialFormValues = {
 /// INITIAL FUNCTIONS ///
 /// INITIAL FUNCTIONS ///
 const initialFormErrors = {
+  ///// TEXT INPUTS /////
+  firstName: '',
+  lastName: '',
+  email: '',
+  ///// PASSWORD /////
+  password: '',
+  ///// CHECKBOXES /////
+  checked: ''
 
 }
 const initialUsers = []
@@ -87,6 +97,7 @@ const formSubmit = () => {
     firstName: formValues.firstName.trim(),
     lastName: formValues.lastName.trim(),
     password: formValues.password.trim(),
+    email: formValues.email.trim(),
     checked: ['checked'].filter(checked => !!formValues[checked])
   }
   postNewUser(newUser);

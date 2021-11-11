@@ -35,6 +35,7 @@ return (
             <div>{errors.lastName}</div>
             <div>{errors.email}</div>
             <div>{errors.password}</div>
+            <div>{errors.checked}</div>
         </div>
       </div>
 

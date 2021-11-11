@@ -23,7 +23,7 @@ const formSchema = yup.object().shape({
         .max(18, 'type less secret characters! 18 maximum, please!'),
     checked: yup
         .boolean()
-        .required('You must accept the terms')
+        .oneOf([true], 'Gotta accept deez terms')
 })
 
 export default formSchema;
