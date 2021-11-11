@@ -8,10 +8,10 @@ describe('User App', () => {
 
 
     // Helpers to centralize selectors
-    const firstNameInput = () => cy.get('input[firstName=text]');
-    const lastNameInput = () => cy.get('input[lastName=text]');
-    const emailInput = () => cy.get('input[email=text]');
-    const passwordInput = () => cy.get('input[password=text]');
+    const firstNameInput = () => cy.get('input[name=firstName]');
+    const lastNameInput = () => cy.get('input[name=lastName]');
+    const emailInput = () => cy.get('input[name=email]');
+    const passwordInput = () => cy.get('input[name=password]');
 
 
     it('sanity check for some math', () => {
@@ -23,6 +23,25 @@ describe('User App', () => {
         expect(2 + 2).not.to.equal(5);
         expect({}).not.to.equal({}); // === strict equality
         expect({}).to.eql({}); // == not strict equality
+    })
+
+    it('can type in the inputs', () => {
+        firstNameInput()
+            .should('have.value', '')
+            .type('Jon')
+            .should('have.value', 'Jon');
+        lastNameInput()
+            .should('have.value', '')
+            .type('Mezzadri')
+            .should('have.value', 'Mezzadri');
+        emailInput()
+            .should('have.value', '')
+            .type('jmz111@aol.com')
+            .should('have.value', 'jmz111@aol.com');
+        passwordInput()
+            .should('have.value', '')
+            .type('password')
+            .should('have.value', 'password');
     })
 
 
