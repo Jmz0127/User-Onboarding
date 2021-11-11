@@ -17,7 +17,7 @@ const initialFormValues = {
   ///// PASSWORD /////
   password: '',
   ///// CHECKBOXES /////
-  agree: false,
+  checked: false,
 }
 
 
@@ -87,7 +87,7 @@ const formSubmit = () => {
     firstName: formValues.firstName.trim(),
     lastName: formValues.lastName.trim(),
     password: formValues.password.trim(),
-    agree: ['agree'].filter(agree => !!formValues[agree])
+    checked: ['checked'].filter(checked => !!formValues[checked])
   }
   postNewUser(newUser);
 }
@@ -122,11 +122,6 @@ useEffect(() => {
           )
         })
       }
-
-
-
-
-
     </div>
   );
 }

@@ -12,12 +12,18 @@ const formSchema = yup.object().shape({
         .trim()
         .required('A last name is required ya chump!!')
         .min(1, 'Last name must be at least 1 character long silly!!'),
+    email: yup
+        .string()
+        .email('Must be a valid email.')
+        .required('Gotta have an email.'),
     password: yup
         .string()
         .required('You absolutely need a password')
         .min(8, 'type more secret characters! 8 minimum, please!')
         .max(18, 'type less secret characters! 18 maximum, please!'),
-    agree: yup.boolean()
+    checked: yup
+        .boolean()
+        .required('You must accept the terms')
 })
 
 export default formSchema;

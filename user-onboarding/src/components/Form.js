@@ -10,14 +10,14 @@ const {
 } = props
 
 const onSubmit = evt => {
-    evt.preventDefault()
-    submit()
+    evt.preventDefault();
+    submit();
 }
 
 const onChange = evt => {
-    const { firstName, lastName, value, checked, type } = evt.target
+    const { name, value, checked, type } = evt.target
     const realValue = type === 'checkbox' ? checked : value;
-    change(firstName, lastName ,realValue)
+    change(name, realValue)
 }
 
 
@@ -33,6 +33,7 @@ return (
         <div className='errors'>
             <div>{errors.firstName}</div>
             <div>{errors.lastName}</div>
+            <div>{errors.email}</div>
             <div>{errors.password}</div>
         </div>
       </div>
@@ -43,7 +44,7 @@ return (
         {/* ////////// TEXT INPUTS ////////// */}
         {/* ////////// TEXT INPUTS ////////// */}
         {/* ////////// TEXT INPUTS ////////// */}
-        <label>First Name
+        <label>First Name:
             <input
                 value={values.firstName}
                 onChange={onChange}
@@ -51,7 +52,7 @@ return (
                 type='text'
             />
         </label>
-        <label>Last Name
+        <label>Last Name:
             <input
                 value={values.lastName}
                 onChange={onChange}
@@ -59,12 +60,19 @@ return (
                 type='text'
             />
         </label>
+        <label>Email:
+            <input
+                value={values.email}
+                onChange={onChange}
+                name='email'
+                type='email'
+            />
+        </label>
 
-
         {/* ////////// PASSWORD ////////// */}
         {/* ////////// PASSWORD ////////// */}
         {/* ////////// PASSWORD ////////// */}
-        <label>Password
+        <label>Password:
             <input
                 value={values.password}
                 onChange={onChange}
@@ -83,9 +91,9 @@ return (
         <label>I Agree
             <input
                 type='checkbox'
-                name='agree'
+                name='checked'
                 onChange={onChange}
-                checked={values.agree}
+                checked={values.checked}
             />
         </label>
     </div>
